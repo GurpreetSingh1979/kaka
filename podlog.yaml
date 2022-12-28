@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: testcontainer
+    image: ubuntu
+    command: ['sh', '-c', 'echo Hello from Gurpreet Singh!!! &&sleep 60']
+  restartPolicy: Never
