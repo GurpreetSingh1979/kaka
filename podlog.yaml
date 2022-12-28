@@ -1,3 +1,4 @@
+# Pod Logs File with ubuntu image
 apiVersion: v1
 kind: Pod
 metadata:
