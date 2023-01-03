@@ -1,0 +1,33 @@
+Label, Selector and Annotation
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: labelpod
+  labels:
+    environment: staging
+    tier: frontend
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+spec:
+  containers:
+  - name: labelcontainer
+    image: nginx
+    ports:
+      - containerPort: 80
+---
+----
+Service ClusterIP
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type : ClusterIP
+  selector:
+    tier: frontend
+  ports:
+  - protocol : TCP
+    port: 8000
+    targetPort: 80
